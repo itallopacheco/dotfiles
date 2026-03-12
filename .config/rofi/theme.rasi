@@ -1,0 +1,98 @@
+* {
+    font:             "JetBrainsMono Nerd Font 12";
+    padding:          0px;
+    background-color: transparent;
+    border-radius:    0px;
+
+    /* Gruvbox Dark */
+    bg:      #282828;
+    bg1:     #3c3836;
+    bg2:     #504945;
+    fg:      #ebdbb2;
+    fg2:     #a89984;
+    yellow:  #d79921;
+    blue:    #458588;
+    blue-l:  #83a598;
+    green:   #98971a;
+    red:     #cc241d;
+}
+
+window {
+    width:            750px;
+    height:           355px;
+    location:         center;
+    border:           0px;
+    border-radius:    3px;
+    background-color: @bg;
+    padding:          0px;
+}
+
+mainbox {
+    orientation: horizontal;
+    children:    [ "borderbox" ];
+    spacing:     0px;
+    padding:     0px;
+}
+
+borderbox {
+    orientation:  horizontal;
+    children:     [ "imagebox", "contentbox" ];
+    padding:      0px;
+    spacing:      0px;
+    border-radius: 3px;
+}
+
+imagebox {
+    background-image: url("/home/oicapivara/.config/rofi/image.jpg", width);
+    expand:           false;
+    width:            330px;
+}
+
+contentbox {
+    orientation: vertical;
+    children:    [ "entry", "listview" ];
+    spacing:     0px;
+    padding:     0px;
+    expand:      true;
+}
+
+entry {
+    padding:           10px 12px;
+    expand:            false;
+    font:              "JetBrainsMono Nerd Font 12";
+    text-color:        @fg;
+    background-color:  @bg1;
+    border-radius:     0px 3px 0px 0px;
+    placeholder:       "Buscar...";
+    placeholder-color: @fg2;
+}
+
+prompt {
+    enabled: false;
+}
+
+listview {
+    lines:            6;
+    background-color: rgba(40, 40, 40, 0.90);
+    border-radius:    0px 0px 3px 0px;
+    padding:          6px;
+    spacing:          2px;
+    scrollbar:        false;
+}
+
+element {
+    border-radius: 3px;
+    children:      [ element-icon, element-text ];
+}
+
+element-icon, element-text {
+    padding:    6px 8px;
+    spacing:    2px;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @blue;
+    text-color:       @bg;
+    border-radius:    3px;
+}
